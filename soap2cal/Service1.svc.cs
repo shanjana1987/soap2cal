@@ -12,22 +12,25 @@ namespace soap2cal
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service1 : IService1
     {
-        public string GetData(int value)
+        public double AddSub(double a, double b)
         {
-            return string.Format("You entered: {0}", value);
+            return a + b;
         }
 
-        public CompositeType GetDataUsingDataContract(CompositeType composite)
+        public double Divide(double a, double b)
         {
-            if (composite == null)
-            {
-                throw new ArgumentNullException("composite");
-            }
-            if (composite.BoolValue)
-            {
-                composite.StringValue += "Suffix";
-            }
-            return composite;
+            return a / b;
+        }
+
+        public double Multiply(double a, double b)
+        {
+            return a * b;
+        }
+
+        public double Subtract(double a, double b)
+        {
+            return a - b;
         }
     }
 }
+
